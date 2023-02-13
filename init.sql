@@ -1,6 +1,3 @@
-DROP DATABASE chatapp;
-DROP USER 'testuser'@'localhost';
-
 CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testuser';
 CREATE DATABASE chatapp;
 USE chatapp
