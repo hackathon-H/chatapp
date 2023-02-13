@@ -76,9 +76,117 @@ def logout():
     session.clear()
     return redirect('/login')        
 
+
 @app.route('/')
 def index():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    else:
+        channels = dbConnect.getChannelAll()
     return render_template('index.html') 
+
+@app.route('/', methods=['POST'])
+def add_channel():
+    uid = session.get('uid')
+    if uid is None:
+        return redirect('/login')
+    channel_name = request.form.get('channel-title')
+    channel = dbConnect.getChannelByName(channel_name)
+    if channel == None:
+        channel_description = request.form.get('channel-description')
+        dbConnect.addChannel(uid, channel_name, channel_description)
+        return redirect('/')
+    else:
+        error = '登録済みのチャンネル名です'
+        return render_template('error/error.html', error_message=error)
+
+@app.route('/update_channel', methods=['POST'])
+def update_channel():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+
+    cid = request.form.get('cid')
+    channel_name = request.form.get('channel-title')
+    channel_description = request.form.get('channel-description')
+
+    dbConnect.updateChannel(uid, channel_name, channel_description, cid)
+    channel = dbConnect.getChannelById(cid)
+    messages = dbConnect.getMessageAll(cid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
+
+
+@app.route('/delete/<cid>')
+def delete_channel(cid):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    else:
+        channel = dbConnect.getChannelById(cid)
+        if channel["uid"] != uid:
+            flash('削除権限がありません')
+            return redirect ('/')
+        else:
+            dbConnect.deleteChannel(cid)
+            channels = dbConnect.getChannelAll()
+            return render_template('index.html', channels=channels, uid=uid)
+
+
+@app.route('/detail/<cid>')
+def detail(cid):
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+    cid = cid
+    channel = dbConnect.getChannelById(cid)
+    messages = dbConnect.getMessageAll(cid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
+
+
+@app.route('/message', methods=['POST'])
+def add_message():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+
+    message = request.form.get('message')
+    channel_id = request.form.get('channel_id')
+
+    if message:
+        dbConnect.createMessage(uid, channel_id, message)
+
+    channel = dbConnect.getChannelById(channel_id)
+    messages = dbConnect.getMessageAll(channel_id)
+
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
+
+
+@app.route('/delete_message', methods=['POST'])
+def delete_message():
+    uid = session.get("uid")
+    if uid is None:
+        return redirect('/login')
+
+    message_id = request.form.get('message_id')
+    cid = request.form.get('channel_id')
+    if message_id:
+        dbConnect.deleteMessage(message_id)
+
+    channel = dbConnect.getChannelById(cid)
+    messages = dbConnect.getMessageAll(cid)
+
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
+
+
+@app.errorhandler(404)
+def show_error404(error):
+    return render_template('error/404.html')
+
+@app.errorhandler(500)
+def show_error500(error):
+    return render_template('error/500.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
