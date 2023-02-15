@@ -1,7 +1,7 @@
-CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testuser';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
 CREATE DATABASE chatapp;
 USE chatapp
-GRANT ALL PRIVILEGES ON chatapp.* TO 'testuser'@'localhost';
+GRANT ALL PRIVILEGES ON chatapp.* TO 'user';
 
 CREATE TABLE users (
     uid varchar(255) PRIMARY KEY,
