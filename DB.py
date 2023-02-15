@@ -6,8 +6,9 @@ class DB:
         try:
             connection = pymysql.connect(host="localhost",
                                          user="user",
-                                         password="passwd",
+                                         password="password",
                                          database="chatapp",
+                                         charset="utf8",
                                          cursorclass=pymysql.cursors.DictCursor)
             return connection
         except (ConnectionError):
