@@ -1,4 +1,4 @@
-CREATE USER 'localhost' IDENTIFIED BY 'user';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
 CREATE DATABASE chatapp;
 USE chatapp
 GRANT ALL PRIVILEGES ON chatapp.* TO 'user';
