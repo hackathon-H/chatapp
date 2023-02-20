@@ -10,7 +10,8 @@
   position: relative;
   overflow: hidden;
   background-size: cover;
-  font-family: "Kanit", sans-serif;
+  /* フォントをMontserratに変更 */
+  font-family: "Montserrat", sans-serif;
   line-height: 1em;
   text-align: center;
   -webkit-background-clip: text;
@@ -29,6 +30,7 @@
   color: var(--dark_pink);
 }
 
+/* 背景画像を差し替え予定 */
 .registration-main.login-main {
   background-image: url("../img/green.jpg");
 }
