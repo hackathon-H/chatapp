@@ -13,7 +13,7 @@ app.permanent_session_lifetime = timedelta(days=1)
 
 @app.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('registration/signup.html')
 
 @app.route('/signup',methods=['POST'])
 def userSiginup():
@@ -48,7 +48,7 @@ def userSiginup():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('registration/login.html')
 
 @app.route('/login', methods=['POST'])
 def userLogin():
