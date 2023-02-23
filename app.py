@@ -1,10 +1,11 @@
-from flask import Flask, render_template,session,redirect,request,flash
+from flask import Flask, render_template, session, redirect, request, flash
 from datetime import timedelta
 from models import dbConnect
 from user import User
 import uuid
 import re
 import hashlib
+
 
 app = Flask(__name__)
 app.secret_key = uuid.uuid4().hex 
@@ -13,7 +14,8 @@ app.permanent_session_lifetime = timedelta(days=1)
 
 @app.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('registration/signup.html')
+
 
 @app.route('/signup',methods=['POST'])
 def userSiginup():
@@ -48,7 +50,8 @@ def userSiginup():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('registration/login.html')
+
 
 @app.route('/login', methods=['POST'])
 def userLogin():
@@ -84,7 +87,7 @@ def index():
         return redirect('/login')
     else:
         channels = dbConnect.getChannelAll()
-    return render_template('index.html') 
+    return render_template('index.html', channels=channels, uid= uid) 
 
 @app.route('/', methods=['POST'])
 def add_channel():
@@ -130,7 +133,7 @@ def delete_channel(cid):
         else:
             dbConnect.deleteChannel(cid)
             channels = dbConnect.getChannelAll()
-            return render_template('index.html', channels=channels, uid=uid)
+            return render_template('templates/index.html', channels=channels, uid=uid)
 
 
 @app.route('/detail/<cid>')
