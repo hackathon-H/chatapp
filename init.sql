@@ -1,7 +1,9 @@
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
+DROP DATABASE chatapp;
+DROP USER 'user'@'localhost';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'testuser';
 CREATE DATABASE chatapp;
 USE chatapp
-GRANT ALL PRIVILEGES ON chatapp.* TO 'user';
+GRANT ALL PRIVILEGES ON chatapp.* TO 'user'@'localhost';
 
 CREATE TABLE users (
     uid varchar(255) PRIMARY KEY,
@@ -13,7 +15,7 @@ CREATE TABLE users (
 CREATE TABLE channels (
     id serial PRIMARY KEY,
     uid varchar(255) REFERENCES users(uid),
-    name varchar(255) UNIQUE NOT NULL,
+    name varchar(255) UNIQUE NOT NULL
 );
 
 CREATE TABLE messages (
