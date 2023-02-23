@@ -28,7 +28,7 @@ class dbConnect:
             user = cur.fetchone()
             return user
         except Exception as e:
-            print('例外が発生しています')
+            print('例外' + e + 'が発生しています')
             return None
         finally:
             cur.close
@@ -87,7 +87,7 @@ class dbConnect:
             cur.execute(sql, (uid, newChannelName, newChannelDescription))
             conn.commit()
         except Exception as e:
-            print('例外が発生しています')
+            print('例外' + e + 'が発生しています')
             return None
         finally:
             cur.close()
@@ -116,7 +116,7 @@ class dbConnect:
             cur.execute(sql, (uid, newChannelName, newChannelDescription, cid))
             conn.commit()
         except Exception as e:
-            print('例外が発生しています')
+            print('例外が' + e + '発生しています')
             return None
         finally:    
             cur.close()
@@ -145,7 +145,7 @@ class dbConnect:
             messages = cur.fetchall()
             return messages
         except Exception as e:
-            print('例外'+e+'が発生しています')
+            print('例外'+ e +'が発生しています')
             return None
         finally:
             cur.close()
@@ -159,7 +159,7 @@ class dbConnect:
             cur.execute(sql, (uid, cid, message))
             conn.commit()
         except Exception as e:
-            print('例外' +e +'が発生しています')
+            print('例外' + e +'が発生しています')
             return None
         finally:
             cur.close()
