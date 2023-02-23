@@ -92,6 +92,20 @@ class dbConnect:
         finally:
             cur.close()
 
+    # チャンネル情報を取得する関数   
+    def getChannelByName(channel_name):
+        try:
+            conn = DB.getConnection()
+            cur = conn.cursor()
+            sql = "SELECT * FROM channels WHERE name=%s;"
+            cur.execute(sql, (channel_name))
+            channel = cur.fetchone()
+        except Exception as e:
+            print('例外' + e + 'が発生しました')
+            return None
+        finally:
+            cur.close()
+            return channel     
 
     #　チャンネルをアップデートする関数 
     def updateChannel(uid, newChannelName, newChannelDescription, cid):
@@ -116,7 +130,7 @@ class dbConnect:
             cur.execute(sql, (cid))
             conn.commit()
         except Exception as e:
-            print('例外が発生しています')
+            print('例外'+ e +'が発生しています')
             return None
         finally:
             cur.close()
@@ -131,7 +145,7 @@ class dbConnect:
             messages = cur.fetchall()
             return messages
         except Exception as e:
-            print('例外が発生しています')
+            print('例外'+e+'が発生しています')
             return None
         finally:
             cur.close()
@@ -145,7 +159,7 @@ class dbConnect:
             cur.execute(sql, (uid, cid, message))
             conn.commit()
         except Exception as e:
-            print('例外が発生しています')
+            print('例外' +e +'が発生しています')
             return None
         finally:
             cur.close()
@@ -159,7 +173,7 @@ class dbConnect:
             cur.execute(sql, (message_id))
             conn.commit()
         except Exception as e:
-            print('例外が発生しています')
+            print('例外'+ e +'が発生しています')
             return None
         finally:
             cur.close()
