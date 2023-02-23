@@ -20,23 +20,24 @@ img {
 }
 
 h1 {
+
   position: absolute;
-left: 42.13%;
-right: 41.37%;
-top: 10.07%;
-bottom: 84.32%;
-
-font-family: 'Noto Sans JP';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 58px;
-/* ボックスの高さと同一 */
-
-display: flex;
-align-items: center;
-
-color: #1D1C1D;
+  left: 42.13%;
+  right: 41.37%;
+  top: 10.07%;
+  bottom: 84.32%;
+  
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 58px;
+  /* ボックスの高さと同一 */
+  
+  display: flex;
+  align-items: center;
+  
+  color: #1D1C1D;
 }
 
 
