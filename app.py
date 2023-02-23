@@ -14,7 +14,8 @@ app.permanent_session_lifetime = timedelta(days=1)
 
 @app.route('/signup')
 def signup():
-    return render_template('templates/registration/signup.html')
+    return render_template('registration/signup.html')
+
 
 @app.route('/signup',methods=['POST'])
 def userSiginup():
@@ -49,7 +50,7 @@ def userSiginup():
 
 @app.route('/login')
 def login():
-    return render_template('templates/registration/login.html')
+    return render_template('registration/login.html')
 
 
 @app.route('/login', methods=['POST'])
@@ -86,7 +87,7 @@ def index():
         return redirect('/login')
     else:
         channels = dbConnect.getChannelAll()
-    return render_template('templates/index.html') 
+    return render_template('index.html', channels=channels, uid= uid) 
 
 @app.route('/', methods=['POST'])
 def add_channel():
@@ -101,7 +102,7 @@ def add_channel():
         return redirect('/')
     else:
         error = '登録済みのチャンネル名です'
-        return render_template('templates/error/error.html', error_message=error)
+        return render_template('error/error.html', error_message=error)
 
 @app.route('/update_channel', methods=['POST'])
 def update_channel():
@@ -116,7 +117,7 @@ def update_channel():
     dbConnect.updateChannel(uid, channel_name, channel_description, cid)
     channel = dbConnect.getChannelById(cid)
     messages = dbConnect.getMessageAll(cid)
-    return render_template('templates/detail.html', messages=messages, channel=channel, uid=uid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
 
 @app.route('/delete/<cid>')
@@ -143,7 +144,7 @@ def detail(cid):
     cid = cid
     channel = dbConnect.getChannelById(cid)
     messages = dbConnect.getMessageAll(cid)
-    return render_template('templates/detail.html', messages=messages, channel=channel, uid=uid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
 
 @app.route('/message', methods=['POST'])
@@ -161,7 +162,7 @@ def add_message():
     channel = dbConnect.getChannelById(channel_id)
     messages = dbConnect.getMessageAll(channel_id)
 
-    return render_template('templates/detail.html', messages=messages, channel=channel, uid=uid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
 
 @app.route('/delete_message', methods=['POST'])
@@ -178,16 +179,16 @@ def delete_message():
     channel = dbConnect.getChannelById(cid)
     messages = dbConnect.getMessageAll(cid)
 
-    return render_template('templates/detail.html', messages=messages, channel=channel, uid=uid)
+    return render_template('detail.html', messages=messages, channel=channel, uid=uid)
 
 
 @app.errorhandler(404)
 def show_error404(error):
-    return render_template('templates/error/404.html')
+    return render_template('error/404.html')
 
 @app.errorhandler(500)
 def show_error500(error):
-    return render_template('templates/error/500.html')
+    return render_template('error/500.html')
 
 
 if __name__ == "__main__":
