@@ -2,10 +2,10 @@
 {% block title %}         <!--タイトル部そのまま-->
   <title>chatroom</title>
 {% endblock %}
-{% block body %}          <!--中身の変更-->
+{% block body %}         
+  <!--中身の変更,画像変更-->
+  <div class="detail-background">
   <div class="main-container">
-    <!--画像変更-->
-    <img src="../static/img/adriel-kloppenburg-S1XAf3JxOLI-unsplash.jpg'/>
     <div class="chat,box">
       <div id="chat-header">
         <!-- もしuidとチャンネル作成者が同じならタイトルを編集可能にする -->
@@ -53,6 +53,7 @@
         </form>
       </div>
     </div>
+  </div>
   </div>
 {% endblock %}
 {% block script %}
