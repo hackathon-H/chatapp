@@ -53,6 +53,7 @@ def login():
     return render_template('registration/login.html')
 
 
+
 @app.route('/login', methods=['POST'])
 def userLogin():
     email = request.form.get('email')
