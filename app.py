@@ -98,8 +98,7 @@ def add_channel():
     channel_name = request.form.get('channel-title')
     channel = dbConnect.getChannelByName(channel_name)
     if channel == None:
-        channel_description = request.form.get('channel-description')
-        dbConnect.addChannel(uid, channel_name, channel_description)
+        dbConnect.addChannel(uid, channel_name)
         return redirect('/')
     else:
         error = '登録済みのチャンネル名です'

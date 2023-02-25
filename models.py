@@ -79,12 +79,12 @@ class dbConnect:
             cur.close()
 
     #　チャンネルを加える関数 
-    def addChannel(uid, newChannelName, newChannelDescription):
+    def addChannel(uid, newChannelName):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "INSERT INTO channels (uid, name, abstract) VALUES (%s, %s, %s);"
-            cur.execute(sql, (uid, newChannelName, newChannelDescription))
+            sql = "INSERT INTO channels (uid, name) VALUES (%s, %s);"
+            cur.execute(sql, (uid, newChannelName))
             conn.commit()
         except Exception as e:
             print('例外' + e + 'が発生しています')
@@ -108,12 +108,12 @@ class dbConnect:
             return channel     
 
     #　チャンネルをアップデートする関数 
-    def updateChannel(uid, newChannelName, newChannelDescription, cid):
+    def updateChannel(uid, newChannelName, cid):
         try:
             conn = DB.getConnection()
             cur = conn.cursor()
-            sql = "UPDATE channels SET uid=%s, name=%s, abstract=%s WHERE id=%s;"
-            cur.execute(sql, (uid, newChannelName, newChannelDescription, cid))
+            sql = "UPDATE channels SET uid=%s, name=%s, WHERE id=%s;"
+            cur.execute(sql, (uid, newChannelName, cid))
             conn.commit()
         except Exception as e:
             print('例外が' + e + '発生しています')

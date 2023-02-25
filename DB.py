@@ -15,4 +15,4 @@ class DB:
             return conn
         except (ConnectionError):
             print("コネクションエラーです")
-            connection.close()
+            conn.close()
