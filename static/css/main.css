@@ -104,8 +104,6 @@
 
 .pagination-container {
   width: 100%;
-  border-bottom: 2px solid var(--grey);
-  box-shadow: 0 32px 30px -30px var(--wood);
 }
 
 .pagination {
