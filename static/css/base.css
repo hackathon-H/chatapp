@@ -21,7 +21,7 @@ img {
 }
 
 h1 {
-
+/* 
   position: absolute;
   left: 42.13%;
   right: 41.37%;
@@ -32,9 +32,8 @@ h1 {
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  line-height: 58px;
+  line-height: 58px;*/
   /* ボックスの高さと同一 */
-  
   display: flex;
   align-items: center;
   

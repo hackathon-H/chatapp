@@ -7,6 +7,8 @@ body {
 }
 
 .header-logo {
+  /* フォントを変更 */
+  font-family: "Fredoka One", sans-serif;
   color: var(--pink);
   font-size: 140px;
   font-style: italic;
