@@ -7,7 +7,7 @@
   width: 70px;
   background-image: url("../img/stripe-brick.jpg");
   background-size: cover;
-  box-shadow: 10px 0 0 var(--carbon);
+  box-shadow: 10px 0 0 var(--blue);
   overflow-x: hidden;
   transition: all 0.5s;
   box-sizing: border-box;
@@ -40,7 +40,7 @@
 }
 
 .navigation ul li.active {
-  background-color: var(--carbon);
+  background-color: var(--blue);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -63,7 +63,7 @@
   top: -30px;
   right: 0;
   border-radius: 50%;
-  box-shadow: 15px 15px 0 var(--carbon);
+  box-shadow: 15px 15px 0 var(--blue);
 }
 .navigation ul li.active a::after {
   content: "";
@@ -73,7 +73,7 @@
   top: 60px;
   right: 0;
   border-radius: 50%;
-  box-shadow: 15px -15px 0 var(--carbon);
+  box-shadow: 15px -15px 0 var(--blue);
 }
 
 .navigation ul li a .icon {
