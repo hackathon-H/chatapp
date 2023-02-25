@@ -3,6 +3,7 @@
   flex-direction: column;
 }
 
+/* 消去予定 */
 .bg-img {
   position: absolute;
   top: 0;
@@ -26,6 +27,7 @@
   );
 }
 
+/* 消去予定　*/
 .bg-img::before {
   content: "";
   position: absolute;
@@ -97,6 +99,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: center
 }
 
 .pagination-container {

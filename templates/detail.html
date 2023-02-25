@@ -1,10 +1,9 @@
-{% extends 'base.html' %} <!--base.htmlを拡張-->
+{% extends 'basedetail.html' %} <!--base.htmlを拡張-->
 {% block title %}         <!--タイトル部そのまま-->
   <title>chatroom</title>
 {% endblock %}
 {% block body %}         
   <!--中身の変更,画像変更-->
-  <div class="detail-background">
   <div class="main-container">
     <div class="chat,box">
       <div id="chat-header">
@@ -53,7 +52,6 @@
         </form>
       </div>
     </div>
-  </div>
   </div>
 {% endblock %}
 {% block script %}
