@@ -98,7 +98,7 @@ button {
 button.green {
   background-color: var(--light_blue);
   transition: .3s;
-  width: 526%;
+  width: 526px;
   margin-top: 24px;
 }
 
@@ -110,7 +110,7 @@ button.green:hover {
 button.pink {
   background-color: var(--light_blue);
   transition: .3s;
-  width: 526%;
+  width: 526px;
   margin-top: 20px;
 }
 
