@@ -1,5 +1,4 @@
 body{
-    background-image: static/img/adriel-kloppenburg-S1XAf3JxOLI-unsplash.jpg;
+    background-image: url(../img/adriel-kloppenburg-S1XAf3JxOLI-unsplash.jpg);
     background-size: cover;
-
 }    
