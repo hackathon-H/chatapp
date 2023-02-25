@@ -7,7 +7,7 @@
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(240, 240, 240, 0.5);
+  background-color: white(240, 240, 240, 0.5);
 }
 
 .modal-content {
@@ -15,7 +15,7 @@
   margin: 20% auto;
   width: 70%;
   border-radius: 20px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  box-shadow: 0 5px 8px 0 white(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: 1s;
   position: relative;
@@ -35,7 +35,7 @@
 }
 
 .modal-header {
-  background: var(--ash_grey);
+  background: var(--light_blue);
   padding: 3px 15px 3px 32px;
   border-radius: 20px 20px 0 0;
   color: var(--navy);
@@ -66,12 +66,12 @@
 .channel-form-input {
   width: 70%;
   background-color: transparent;
-  border-bottom: 1px solid lightgrey;
-  box-shadow: 0 10px 15px -12px var(--middle_pink);
+  border-bottom: 1px solid white;
+  box-shadow: 0 10px 15px -12px var(--light_blue);
   margin-top: 8px;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  color: var(--middle_pink);
+  color: var(--white);
 }
 
 #bar {
@@ -79,27 +79,17 @@
   width: 32px;
 }
 
-.modal-gif {
-  position: absolute;
-  z-index: 2;
-  top: -66px;
-  left: 30%;
-}
-
 .modal-body button {
-  background-color: var(--baby_pink);
+  background-color: var(--blue);
 }
 
 .modal-body button:hover {
-  background-color: var(--middle_pink);
+  background-color: var(--light_blue);
 }
 
 @media screen and (max-width: 639px) {
   .modal-content {
     margin: 35% auto;
-  }
-  #modal-gif {
-    display: none;
   }
 }
 
