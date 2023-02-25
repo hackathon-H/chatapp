@@ -8,9 +8,10 @@ body {
 
 .header-logo {
   color: var(--pink);
-  font-size: 140px;
-  font-style: italic;
-  text-shadow: 10px 10px 0px #525252;
+  position: absolute;
+  font-family: "Yellowtail";
+  font-size: 180px;
+  text-shadow: 6px 6px 0px #b7afb0;
   /* 上 | 右 | 下 | 左 */
   margin: 0 0.2em 0 0.6em;
   padding-top: 0.2em;
@@ -64,7 +65,7 @@ body {
   align-items: end;
   justify-content: end;
   min-width: 65%;
-  margin-top: -210px;
+  margin-top: -5px;
 }
 
 
