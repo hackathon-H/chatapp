@@ -10,12 +10,12 @@
 }
 
 #chat-header {
-  background-color: var(--baby_pink);
-  height: 8vh;
+  background-color: var(--white);
+  height: 10vh;
   width: calc(100vw - 70px);
   position: fixed;
   top: 0;
-  color: var(--snow);
+  color: var(--black);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -29,13 +29,10 @@
   font-size: larger;
 }
 
-/* 概要部分なのでカット済み*/
-
-
 /* メッセージエリア */
-
+/* 白いラインの原因 */
 #message-area {
-  min-height: 100vh;
+  min-height: 80vh;
   width: 100%;
   padding-top: calc(8vh + 10px);
   padding-right: 20px;
@@ -55,7 +52,7 @@
 
 .user-name {
   font-size: 8px;
-  color: var(--wood);
+  color: var(--black);
 }
 
 .my-messages {
@@ -63,7 +60,7 @@
 }
 
 .delete-message-btn {
-  background-color: var(--carbon);
+  background-color: var(--light-blue);
   height: 40px;
   width: 40px;
   line-height: 47px;
@@ -74,7 +71,7 @@
 }
 
 .delete-message-btn ion-icon {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .box {
@@ -91,13 +88,13 @@
 }
 
 .box-left {
-  border: 1px solid var(--dark_pink);
-  background-color: var(--baby_pink);
+  border: 1px solid var(--light-blue);
+  background-color: var(--light-blue);
 }
 
 .box-right {
-  border: 1px solid var(--middle_green);
-  background-color: var(--tiffany_green);
+  border: 1px solid var(--white);
+  background-color: var(--white);
   margin-left: auto;
   margin-right: 10px;
 }
@@ -130,20 +127,19 @@
   position: fixed;
   bottom: 0;
   width: calc(100vw - 70px);
-  height: 15vh;
-  background-color: rgba(211, 211, 211, 0.75);
+  height: 13vh;
+  background-color: trandparent;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   background-size: contain;
-  border-top: 3px solid black;
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
 .typing-box {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   height: 80%;
-  width: 80%;
+  width: 90%;
   margin: auto;
   position: relative;
   background-color: var(--snow);
@@ -165,22 +161,19 @@
 
 #add-message-btn {
   position: absolute;
-  background-color: var(--carbon);
+  background-color: var(--white);
   height: 40px;
   width: 40px;
   line-height: 47px;
   padding: 0;
   margin: 0;
-  bottom: 8px;
-  right: 8px;
+  bottom: 20px;
+  left: -60px;
 }
 
 #add-message-btn ion-icon {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
 }
-
-/* 必要なしのため削除　#gif */
-
 
 @media screen and (max-width: 550px) {
   #chatroom-description {
@@ -201,9 +194,6 @@
   .typing-box textarea {
     padding: 0;
   }
-
-
-/* 必要なしのため#gif削除*/
 }
 
 @media only screen and (min-width: 640px) {
