@@ -11,18 +11,19 @@
 
 #chat-header {
   background-color: var(--white);
-  height: 10vh;
-  width: calc(100vw - 70px);
+  height: 8vh;
+  width: calc(50vw - 60px);
   position: fixed;
   top: 0;
   color: var(--black);
   font-weight: 600;
   display: flex;
+  border-radius: 10px;
   align-items: center;
   gap: 2rem;
   padding-left: 20px;
   z-index: 2;
-  box-shadow: 0px 10px 10px 0px var(--wood);
+  box-shadow: 10px 10px 20px 0px var(--grey);
 }'
 
 #chatroom-name {
@@ -33,11 +34,12 @@
 /* 白いラインの原因 */
 #message-area {
   min-height: 80vh;
-  width: 100%;
-  padding-top: calc(8vh + 10px);
-  padding-right: 20px;
-  padding-bottom: calc(20vh + 10px);
-  padding-left: 20px;
+  width: 40%;
+  margin-left: auto;
+  padding-top: calc(10vh + 20px);
+  padding-right: 10px;
+  padding-bottom: calc(20vh + 5px);
+  padding-left: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
@@ -48,11 +50,13 @@
 .messages {
   display: flex;
   flex-direction: column;
+  max-width: -webkit-calc(100% - 60px);
+  max-width: calc(100% - 60px);
 }
 
 .user-name {
   font-size: 8px;
-  color: var(--black);
+  color: var(--white);
 }
 
 .my-messages {
@@ -76,11 +80,11 @@
 
 .box {
   position: relative;
-  width: 60%;
+  width: 80%;
   margin: 0;
   padding: 0.7em 0 0.4em 1em;
   border-radius: 10px;
-  color: var(--snow);
+  color: var(--black);
   font-weight: bold;
   font-size: 14px;
   line-height: 1.5;
@@ -88,11 +92,13 @@
 }
 
 .box-left {
-  border: 1px solid var(--light-blue);
+  float: left;
+  border: 1px solid var(--white);
   background-color: var(--light-blue);
 }
 
 .box-right {
+  float: right;
   border: 1px solid var(--white);
   background-color: var(--white);
   margin-left: auto;
@@ -126,23 +132,25 @@
 .typing-box-wrapper {
   position: fixed;
   bottom: 0;
-  width: calc(100vw - 70px);
-  height: 13vh;
+  width: calc(40vw - 40px);
+  height: 10vh;
   background-color: trandparent;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   background-size: contain;
+  padding-left: 30px;
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
 .typing-box {
-  height: 80%;
+  height: 65%;
   width: 90%;
   margin: auto;
+  padding-left: 40px;
   position: relative;
-  background-color: var(--snow);
+  background-color: var(--white);
   border-radius: 16px;
 }
 
@@ -153,6 +161,8 @@
   width: 100%;
   padding: 4px 55px 4px 12px;
   border-radius: 16px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .typing-box textarea:focus {
@@ -167,18 +177,12 @@
   line-height: 47px;
   padding: 0;
   margin: 0;
-  bottom: 20px;
-  left: -60px;
+  bottom: 5px;
+  left: -50px;
 }
 
 #add-message-btn ion-icon {
   font-size: 2.3rem;
-}
-
-@media screen and (max-width: 550px) {
-  #chatroom-description {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 639px) {
@@ -192,12 +196,12 @@
   }
 
   .typing-box textarea {
-    padding: 0;
+    padding: 10px;
   }
 }
 
 @media only screen and (min-width: 640px) {
   .box {
-    width: 40%;
+    width: 100%;
   }
 }
