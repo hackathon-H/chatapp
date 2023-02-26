@@ -114,3 +114,12 @@
     margin: 35% auto;
   }
 }
+
+@media only screen and (min-width: 640px) and (max-width: 1023px) {
+  .modal-content {
+    width: 95%;
+  }
+  .modal {
+    padding-left: 80px;
+  }
+}
