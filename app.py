@@ -112,9 +112,8 @@ def update_channel():
 
     cid = request.form.get('cid')
     channel_name = request.form.get('channel-title')
-    channel_description = request.form.get('channel-description')
 
-    dbConnect.updateChannel(uid, channel_name, channel_description, cid)
+    dbConnect.updateChannel(uid, channel_name, cid)
     channel = dbConnect.getChannelById(cid)
     messages = dbConnect.getMessageAll(cid)
     return render_template('detail.html', messages=messages, channel=channel, uid=uid)
@@ -133,7 +132,7 @@ def delete_channel(cid):
         else:
             dbConnect.deleteChannel(cid)
             channels = dbConnect.getChannelAll()
-            return render_template('templates/index.html', channels=channels, uid=uid)
+            return render_template('index.html', channels=channels, uid=uid)
 
 
 @app.route('/detail/<cid>')

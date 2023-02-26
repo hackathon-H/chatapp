@@ -5,51 +5,51 @@
 {% block body %}         
   <!--中身の変更,画像変更-->
   <div class="main-container">
-      <div id="chat-header">
-        <!-- もしuidとチャンネル作成者が同じならタイトルを編集可能にする -->
-        <p id="chatroom-name">{{ channel.name }}</p>
-        {% if uid == channel.uid %}
-          <button id='channel-update' class="basic-btn smaller-btn">編集</button>
-          {% include 'modal/update-channel.html' %}
-        {% endif %}
-      </div>
-      <div id="message-area">
-        {% if messages|length > 0 %}
-          {% for message in messages %}
-            {% if message.uid == uid %}
-              <div class="my-messages">
-                <p class="box box-right">{{ message.message }}</p>
-                <form action="/delete_message" method="POST">
-                  <input type="hidden" value="{{ channel.id }}" name="channel_id" />
-                  <button
-                    class="delete-message-btn"
-                    name="message_id"
-                    value="{{ message.id }}"
-                  >
-                    <ion-icon name="trash-bin-outline"></ion-icon>
-                  </button>
-                </form>
-              </div>
-            {% else %}
-              <div class="messages">
-                <p class="user-name">{{ message.user_name }}</p>
-                <p class="box box-left">{{ message.message }}</p>
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <div><p>まだメッセージがありません</p></div>
-        {% endif %}
-      </div>
-      <div class="typing-box-wrapper">
-        <form class="typing-box" action="/message" method="POST">
-          <textarea name="message" id="message" autofocus></textarea>
-          <input type="hidden" name="channel_id" value="{{ channel.id }}" />
-          <button type="submit" id="add-message-btn">
-            <ion-icon name="paper-plane" style="color:black;"></ion-icon>
-          </button>
-        </form>
-      </div>
+    <div id="chat-header">
+      <!-- もしuidとチャンネル作成者が同じならタイトルを編集可能にする -->
+      <p id="chatroom-name">{{ channel.name }}</p>
+      {% if uid == channel.uid %}
+        <button id='channel-update' class="basic-btn smaller-btn">編集</button>
+        {% include 'modal/update-channel.html' %}
+      {% endif %}
+    </div>
+    <div id="message-area">
+      {% if messages|length > 0 %}
+        {% for message in messages %}
+          {% if message.uid == uid %}
+            <div class="my-messages">
+              <p class="box box-right">{{ message.message }}</p>
+              <form action="/delete_message" method="POST">
+                <input type="hidden" value="{{ channel.id }}" name="channel_id" />
+                <button
+                  class="delete-message-btn"
+                  name="message_id"
+                  value="{{ message.id }}"
+                >
+                  <ion-icon name="trash-bin-outline"></ion-icon>
+                </button>
+              </form>
+            </div>
+          {% else %}
+            <div class="messages">
+              <p class="user-name">{{ message.user_name }}</p>
+              <p class="box box-left">{{ message.message }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <div><p>まだメッセージがありません</p></div>
+      {% endif %}
+    </div>
+    <div class="typing-box-wrapper">
+      <form class="typing-box" action="/message" method="POST">
+        <textarea name="message" id="message" autofocus></textarea>
+        <input type="hidden" name="channel_id" value="{{ channel.id }}" />
+        <button type="submit" id="add-message-btn">
+          <ion-icon name="paper-plane" style="color:black;"></ion-icon>
+        </button>
+      </form>
+    </div>
   </div>
 {% endblock %}
 {% block script %}
