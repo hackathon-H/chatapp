@@ -13,13 +13,15 @@
 /* モーダル本体 */
 .modal-content{
   position: absolute;
+  margin: 25% auto;
   width: 686px;
   height: 477px;
   left: 377px;
   top: 268px;
-  background-color: var(--white);
   border-radius:20px;
+  background-color: var(--white);
   filter: drop-shadow(4px 6px 0px #525252);
+  position: relative;
 }
 
 /* チャンネル名を入力してください */
@@ -78,6 +80,7 @@
 }
 
 /* チャンネル名、削除ボタンを押すとチャンネルが消えます、本当によろしいですか？ */
+/*　チャンネル名を入力してください */
 .modal-body {
   padding: 10px 20px;
   display: flex;
@@ -93,6 +96,8 @@
   left: 80px;
   top: 212px;
   background-color: var(--beige);
+  margin-top: 92px;
+  margin-bottom: 48px;
   border-radius: 20px;
   color: var(--black);
 }
