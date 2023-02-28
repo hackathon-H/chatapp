@@ -7,13 +7,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: top;
 }
 
 .channel-title {
   display: flex;
   gap: 14px;
   font-size: 20;px
+  margin-top: 40px;
 }
 
 .channel-title button {
@@ -24,7 +25,10 @@
 }
 
 .channel-title button:hover {
-  background-color: var(--light-blue);
+  background-color: blue;
+}
+.channel-title button:active {
+  background-color: blue;
 }
 
 .channel-box {
@@ -32,7 +36,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   min-height: 50%;
-  width: calc(40vw - 40px);
+  width: calc(30vw - 30px);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -42,7 +46,7 @@
   list-style: none;
   margin-bottom: 5px;
   padding-bottom: 3px;
-  padding-right: 16px;
+  padding-right: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -66,11 +70,12 @@
 }
 
 .pagination-container,
+
+
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-items: center
 }
 
 .pagination-container {
@@ -82,7 +87,7 @@
 }
 
 .pagination li.colored {
-  background-color: var(--light-blue);
+  background-color: var(--blue);
   color: var(--snow);
 }
 
