@@ -21,39 +21,10 @@ img {
 }
 
 h1 {
-/*
-  position: absolute;
-  left: 42.13%;
-  right: 41.37%;
-  top: 10.07%;
-  bottom: 84.32%;
-  
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 400;
   font-size: 40px;
-  line-height: 58px;*/
-  /* ボックスの高さと同一 */
-  
-  display: flex;
-  align-items: center;
-  
-  color: #1D1C1D;
-  font-weight: bold;
-  font-size: ;
+  font-weight: 900;
 }
-
-
-
-#add-channel-btn {
-  position: absolute;
-  width: 300px;
-  height: 50px;
-  left: 600px;
-  top: 150px;
-
-  background: var(-blue);
-}
+ 
 
 input,
 textarea,
@@ -156,43 +127,3 @@ button.green:hover {
   align-items: center;
   overflow-x: hidden;
 }
-
-@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}
-
