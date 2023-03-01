@@ -6,15 +6,15 @@
     </div>
     <div class="modal-coment">
       <p>チャンネル名を入力してください</p>
-    </div>
-    <form class="modal-body" action="/update_channel" method="POST">
-      <input
-        type="text"
-        class="channel-form-input"
-        name="channel-title"
-      />
-      <input type="hidden" name='cid' value='{{ channel.id }}'>
+       <form class="modal-body" action="/update_channel" method="POST">
+        <input
+          type="text"
+          class="channel-form-input"
+          name="channel-title"
+        />
+        <input type="hidden" name='cid' value='{{ channel.id }}'>
         <button>変 更</button>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
