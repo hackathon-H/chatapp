@@ -12,16 +12,17 @@
 
 /* モーダル本体 */
 .modal-content{
-  position: absolute;
   margin: auto;
+  margin-top: 20vh;
   width: 686px;
   height: 477px;
-  left: 377px;
-  top: 268px;
   border-radius:20px;
   background-color: var(--white);
   filter: drop-shadow(4px 6px 0px #525252);
   position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 @keyframes modalopen {
@@ -36,9 +37,14 @@
 /* チャンネルを追加、本当に削除しますか？、チャンネル変更 */
 .modal-header h1 {
   margin: 1rem 0;
+  margin: auto;
 }
 
 .modal-header {
+  position: absolute;
+  top: 0;
+  height: 80px;
+  width: 100%;
   background: var(--ocean_blue);
   border-radius: 20px 20px 0 0;
   color: ver(--black);
@@ -51,8 +57,16 @@
   z-index: 4;
 }
 
+.modal-header h5 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
 .modalClose {
   font-size: 2rem;
+  margin-right: 10px;
 }
 
 /* 表示カーソルの変更 */
@@ -63,11 +77,16 @@
 /* チャンネル名、削除ボタンを押すとチャンネルが消えます、本当によろしいですか？ */
 /*　チャンネル名を入力してください */
 .modal-body {
-  padding: 10px 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--black);
+  margin: auto;
+}
+
+.modal-delete-comment {
+  margin-top: 20%;
 }
 
 .channel-from-input {
@@ -76,7 +95,7 @@
   width: 526px;
   height: 72px;
   left: 80px;
-  top: 212px;
+  top: 100px;
   background-color: var(--beige);
   margin-top: 92px;
   margin-bottom: 48px;
@@ -91,6 +110,7 @@
 
 .modal-body button {
   background-color: var(--light_blue);
+  margin-top: 100px;
 }
 
 .modal-body button:hover {
