@@ -72,18 +72,16 @@
 
 .channel-from-input {
   position: absolute;
+  z-index: 5;
   width: 526px;
   height: 72px;
   left: 80px;
   top: 212px;
+  background-color: var(--beige);
   margin-top: 92px;
   margin-bottom: 48px;
   border-radius: 20px;
   color: var(--black);
-}
-
-.POST{
-  background-color: var(--beige);
 }
 
 #bar{
