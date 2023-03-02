@@ -4,6 +4,7 @@
 }
 
 .main-content {
+  z-index:1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +14,7 @@
 .channel-title {
   display: flex;
   gap: 14px;
-  font-size: 20;px
+  font-size: 20px;
   margin-top: 40px;
 }
 
@@ -66,16 +67,14 @@
 }
 
 .channel-box li a:hover {
-  color: var(--white);
+  color: blue;
 }
 
 .pagination-container,
-
-
 .pagination {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .pagination-container {
@@ -83,18 +82,19 @@
 }
 
 .pagination {
-  padding-left: 0;
+  padding-left: 0px;
+  padding-bottom: 40px;
 }
 
 .pagination li.colored {
-  background-color: var(--blue);
-  color: var(--snow);
+  background-color: black;
+  color: black;
 }
 
 #prev,
 #next,
 .pagination li {
-  padding: 18px;
+  padding: 16px ;
 }
 
 #prev:hover,
@@ -104,9 +104,10 @@
 
 .prev:hover .next:hover {
   cursor: pointer;
-  background-color: var(--navy);
-  color: var(--snow);
+  background-color: black;
+  color: black;
 }
+
 
 @media screen and (max-width: 639px) {
   .main-content {
