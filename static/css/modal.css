@@ -6,7 +6,6 @@
   height: 100%;
   left: 0;
   top: 0;
-  overflow: auto;
   background-color: rgba(197, 236, 246, 0.3);
 }
 
@@ -89,7 +88,7 @@
   margin-top: 20%;
 }
 
-.channel-from-input {
+.channel-form-input {
   position: absolute;
   z-index: 5;
   width: 526px;
