@@ -55,7 +55,7 @@
 }
 
 #mobile-header li a:hover {
-  color: var(--dark_pink);
+  color: blue;
 }
 
 @media screen and (max-width: 639px) {
